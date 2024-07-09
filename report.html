@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Clinical data of patient</title>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+    </head>
+    <body>
+        <h1>Report of Patient</h1>
+        <table border="2" class="center">
+            <thead>
+                <th>ComponentName</th>
+                <th>ComponentValue</th>
+                <th>MeasuredDateTime</th>
+            </thead>
+            {% for d in a %}
+            <tr>
+                <td>{{d.ComponentName}}</td>
+                <td>{{d.ComponentValue}}</td>
+                <td>{{d.MeasuredDateTime}}</td>
+            </tr>
+            {% endfor %}
+        </table>
+        <a class="adjust" href="/">Home</a>
+    </body>
+</html>

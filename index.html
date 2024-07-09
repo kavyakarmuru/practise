@@ -1,0 +1,38 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Data of Patients</title>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+    </head>
+    <body>
+        <h1>Patients data</h1>
+        {% if data %}
+        <table border="2" class="center">
+            <thead>
+                <th>FirstName</th>
+                <th>LastName</th>
+                <th>Age</th>
+                <th>Actions To Perform</th>
+                <th>Actions To Perform</th>
+                <th>Actions To Perform</th>
+                <th>Actions To Perform</th>
+            </thead>
+            {% for d in data %}
+            <tr>
+                <td>{{d.FirstName}}</td>
+                <td>{{d.LastName}}</td>
+                <td>{{d.Age}}</td>
+                <td><a href='/update/{{d.id}}'>Update</a></td>
+                <td><a href='/delete/{{d.id}}'>Delete</a></td>
+                <td><a href='/data/{{d.id}}'>Adddata</a></td>
+                <td><a href='/report/{{d.id}}'>Reports</a></td>
+            </tr>
+            {% endfor %}
+        </table>
+        {% else %}
+        <p>No records found</p>
+        {% endif %}
+        <a class="adjust" href="/create">Add data</a>
+    </body>
+</html>

@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Add patient</title>
+    </head>
+    <body>
+        <h1>Fill below details regarding patient</h1>
+        <form method="post">
+            {{form.as_p}}
+            {% csrf_token %}
+            <input type="submit" name="Add" value="Add details"/>
+        </form>
+    </body>
+</html>

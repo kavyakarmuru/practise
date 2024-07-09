@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>display list of clinical data</title>
+    </head>
+    <body>
+        <h1>clinical data of patient</h1>
+        <ul>
+            <li>FirstName:{{data1.FirstName}}</li>
+            <li>LastName:{{data1.LastName}}</li>
+            <li>Age:{{data1.Age}}</li>
+        </ul>
+        <form method="post">
+            {{form.as_p}}
+            {% csrf_token %}
+            <input type="submit" value="Adddata"/>
+        </form>
+    </body>
+</html>
